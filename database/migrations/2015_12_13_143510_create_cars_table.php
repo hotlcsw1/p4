@@ -18,6 +18,7 @@ class CreateCarsTable extends Migration
             $table->string('model');
             $table->string('style');
             $table->integer('year');
+            $table->integer('price');
             $table->string('picture');
             $table->string('purchase_link');
             $table->timestamps();
