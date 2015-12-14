@@ -20,7 +20,7 @@ class CarsTableSeeder extends Seeder
         'user_id' => 1,
         'year' => 2016,
         'price' => 38999,
-        'picture' => 'http://www.jaguarusa.com/Images/FP_17MY_162_GEE_GALLERY-device_desktop-1366x769_tcm97-186306_gallerythumbnail_195x110.jpg?v=3',
+        'picture' => 'https://media.ed.edmunds-media.com/jaguar/f-pace/2017/oem/2017_jaguar_f-pace_4dr-suv_base_fq_oem_10_300.jpg',
         'purchase_link' => 'http://www.jaguarusa.com/all-models/f-pace/specifications/index.html',
         ]);
 
@@ -35,7 +35,7 @@ class CarsTableSeeder extends Seeder
         'user_id' => 2,
         'year' => 2016,
         'price' => 34499,
-        'picture' => 'http://www.jeep.com/iof/?IMG=EAL_IMAGES/2015\images\CC\CC15_WKJH74_2TA_PXR_APA_XXX_XXX_XXX.png&AUTOTRIM=1&AUTOTRIM=1&HEIGHT=70&WIDTH=150',
+        'picture' => 'https://media.ed.edmunds-media.com/jeep/grand-cherokee/2016/fe/2016_jeep_grand-cherokee_f34_fe_1106151_500.jpg',
         'purchase_link' => 'http://www.jeep.com/model-compare/detailed-chart/?modelYearCode=CUJ201503&variation=1',
         ]);
 
@@ -50,7 +50,7 @@ class CarsTableSeeder extends Seeder
         'user_id' => 2,
         'year' => 2016,
         'price' => 29600,
-        'picture' => 'http://automobiles.honda.com/images/2015/accord-hybrid/exterior-gallery/2015-honda-accord-hybrid-sedan-1.jpg',
+        'picture' => 'https://media.ed.edmunds-media.com/honda/accord-hybrid/2015/oem/2015_honda_accord-hybrid_sedan_touring_rq_oem_1_500.jpg',
         'purchase_link' => 'http://automobiles.honda.com/accord-hybrid/price.aspx',
         ]);
 
@@ -65,7 +65,7 @@ class CarsTableSeeder extends Seeder
         'user_id' => 2,
         'year' => 2016,
         'price' => 27499,
-        'picture' => 'http://www.lexus.com/cm-img/gallery/2016/Lexus-IS-exterior-silver-lining-metallic-action-gallery-overlay-1204x677-LEX-ISG-MY15-0122.jpg',
+        'picture' => 'https://media.ed.edmunds-media.com/lexus/is-350/2016/oem/2016_lexus_is-350_sedan_base_rq_oem_1_500.jpg',
         'purchase_link' => 'http://www.lexus.com/build-your-lexus/#!/zip/02108/series/IS/trim',
         ]);
 
@@ -80,7 +80,7 @@ class CarsTableSeeder extends Seeder
         'user_id' => 1,
         'year' => 2016,
         'price' => 22900,
-        'picture' => 'http://www.toyota.com/content/vehicle-landing/2016/priusv/colorizer/3P0.jpg?interpolation=lanczos-none&output-quality=90&downsize=810px:*',
+        'picture' => 'https://media.ed.edmunds-media.com/toyota/prius-v/2016/oem/2016_toyota_prius-v_wagon_five_rq_oem_1_500.jpg',
         'purchase_link' => 'http://www.toyota.com/priusv/',
         ]);
 
@@ -95,7 +95,7 @@ class CarsTableSeeder extends Seeder
         'user_id' => 2,
         'year' => 2016,
         'price' => 18900,
-        'picture' => 'https://ssl.toyota.com/mirai/assets/core/images/nav/desktop/ownership-experience.jpg',
+        'picture' => 'https://media.ed.edmunds-media.com/toyota/mirai/2016/ns/2016_toyota_mirai_prf_ns_111814_500.jpg',
         'purchase_link' => 'https://ssl.toyota.com/mirai/fcv.html',
         ]);
 
@@ -110,7 +110,7 @@ class CarsTableSeeder extends Seeder
         'user_id' => 1,
         'year' => 2016,
         'price' => 15600,
-        'picture' => 'http://automobiles.honda.com/handlers/resize-image.ashx?w=1076&h=605&q=70&fn=/images/2016/fit/exterior-gallery-new/2016-silver-honda-fit-side3.jpg',
+        'picture' => 'https://media.ed.edmunds-media.com/honda/fit-ev/2013/oem/2013_honda_fit-ev_4dr-hatchback_base_fq_oem_4_500.jpg',
         'purchase_link' => 'http://automobiles.honda.com/fit/price.aspx',
         ]);
     }
