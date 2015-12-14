@@ -70,11 +70,6 @@ Route::group(['middleware' => 'auth'], function() {
 });
 
 /*----------------------------------------------------
-/ practice--->REMOVE
------------------------------------------------------*/
-Route::controller('/practice','PracticeController');
-
-/*----------------------------------------------------
 Debugging/Local/Misc--->REMOVE
 -----------------------------------------------------*/
 if(App::environment('local')) {
