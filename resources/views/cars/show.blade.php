@@ -16,10 +16,10 @@ such as a page specific styesheets.
 
 @section('content')
 
-    @if(!isset($title))
+    @if(!isset($model))
         You have not specified a car
     @else
-        <h1>Show car: {{ $title }}</h1>
+        <h1>Show car: {{ $model }}</h1>
     @endif
 
 @stop

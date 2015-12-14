@@ -66,7 +66,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/cars/delete/{id?}', 'CarController@getDoDelete');
 
     Route::get('/cars', 'CarController@getIndex');
-    Route::get('/cars/show/{title?}', 'CarController@getShow');
+    Route::get('/cars/show/{model?}', 'CarController@getShow');
 });
 
 /*----------------------------------------------------

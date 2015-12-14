@@ -13,9 +13,9 @@
     @else
         @foreach($cars as $car)
             <div>
-                <h2>{{ $car->title }}</h2>
+                <h2>{{ $car->model }}</h2>
                 <a href='/cars/edit/{{$car->id}}'>Edit</a><br>
-                <img src='{{ $car->cover }}'>
+                <img src='{{ $car->picture }}'>
             </div>
         @endforeach
     @endif
