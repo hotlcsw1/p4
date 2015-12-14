@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'url' => 'http://localhost',
+    'url' => env('APP_URL', 'http://p4.approjects.me/'),
 
     /*
     |--------------------------------------------------------------------------
@@ -144,6 +144,9 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
+        'Debugbar' => Barryvdh\Debugbar\ServiceProvider::class,
+        'App\Providers\ComposerServiceProvider',
 
     ],
 
@@ -193,6 +196,8 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Random'   => 'Rych\Random\Random',
 
     ],
 

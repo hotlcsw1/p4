@@ -22,23 +22,33 @@ class AuthController extends Controller
     */
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+    /*
+    * Redirects
+    */
+    // User is redirected to home "/" if the user successfully logs in
+    protected $redirectPath = '/';
+    // User is redirected to "/login" if the user fails to successfully log in
+    protected $loginPath = '/login';
+    // User is redirected to home "/" if the user successfully logsout
+    # Where should the user be redirected to after logging out?
+    protected $redirectAfterLogout = '/';
 
     /**
-     * Create a new authentication controller instance.
-     *
-     * @return void
-     */
+    * Create a new authentication controller instance.
+    *
+    * @return void
+    */
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'getLogout']);
     }
 
     /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
+    * Get a validator for an incoming registration request.
+    *
+    * @param  array  $data
+    * @return \Illuminate\Contracts\Validation\Validator
+    */
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -49,11 +59,11 @@ class AuthController extends Controller
     }
 
     /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return User
-     */
+    * Create a new user instance after a valid registration.
+    *
+    * @param  array  $data
+    * @return User
+    */
     protected function create(array $data)
     {
         return User::create([
@@ -61,5 +71,13 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    // Confirm the logout with flash msg
+    public function getLogout()
+    {
+        \Auth::logout();
+        \Session::flash('flash_message','You have been logged out of the system.  Thank you for visiting us.');
+        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/');
     }
 }
