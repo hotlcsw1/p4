@@ -38,7 +38,7 @@ Route::get('/confirm-login-worked', function() {
 
     if($user) {
         echo 'You are logged in.';
-        dump($user->toArray());
+        //dump($user->toArray());
     } else {
         echo 'You are not logged in.';
     }

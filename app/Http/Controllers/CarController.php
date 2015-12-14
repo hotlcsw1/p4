@@ -31,8 +31,6 @@ class CarController extends Controller {
         # Get all the possible tags so we can include them with checkboxes in the view
         $tagModel = new \App\Tag();
         $tags_for_checkbox = $tagModel->getTagsForCheckboxes();
-        dump($tags_for_checkbox);
-        //getTagsForCheckboxes
 
         /*
         Create a simple array of just the tag names for tags associated with this car;
@@ -42,7 +40,7 @@ class CarController extends Controller {
         foreach($car->tags as $tag) {
             $tags_for_this_car[] = $tag->name;
         }
-        dump($tags_for_this_car);
+
         return view('cars.edit')
             ->with([
                 'car' => $car,
