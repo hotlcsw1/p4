@@ -92,7 +92,7 @@
         </div>
 
         <div class='form-group'>
-            <label for='title'>URL To purchase this car:</label>
+            <label for='title'>URL To Purchase This Car:</label>
             <input
                 type='text'
                 id='purchase_link'
