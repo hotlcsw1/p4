@@ -56,10 +56,12 @@ class CarController extends Controller {
         $this->validate(
             $request,
             [
-                'year' => 'required|min:4',
+                'year' => 'required|numeric|between:1900,2100',
                 'model' => 'required|min:2',
                 'style' => 'required|min:1',
                 'picture' => 'required|url',
+                'purchase_link' => 'url',
+                'price' => 'numeric|between:1,500000',
 
               ]
         );
@@ -102,10 +104,12 @@ class CarController extends Controller {
         $this->validate(
             $request,
             [
-                'year' => 'required|min:4',
+                'year' => 'required|numeric|between:1900,2100',
                 'model' => 'required|min:2',
                 'style' => 'required|min:1',
                 'picture' => 'required|url',
+                'purchase_link' => 'url',
+                'price' => 'numeric|between:1,500000',
 
               ]
         );
