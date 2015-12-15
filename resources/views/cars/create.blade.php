@@ -70,7 +70,7 @@ Create a Car
             type='text'
             id='picture'
             name="picture"
-            value='{{ old('picture','http://automobiles.honda.com/honda-app/images/tablet/2016/civic-sedan/exterior-colors/CB_115.jpg') }}'
+            value='{{ old('picture','https://media.ed.edmunds-media.com/honda/civic/2016/oem/2016_honda_civic_sedan_touring_rq_oem_5_500.jpg') }}'
             >
         </div>
 
@@ -80,7 +80,7 @@ Create a Car
             type='text'
             id='price'
             name='price'
-            value='{{ old('price','10000') }}'
+            value='{{ old('price','24735') }}'
             >
         </div>
 
@@ -90,7 +90,7 @@ Create a Car
             type='text'
             id='purchase_link'
             name='purchase_link'
-            value='{{ old('purchase_link','http://automobiles.honda.com/tools/build-price/colors.aspx?ModelName=Civic%20Sedan&ModelYear=2016&ModelID=FC2E5GEW&EColor=NH-578&IColor=IV') }}'
+            value='{{ old('purchase_link','http://automobiles.honda.com/civic-hybrid/') }}'
             >
         </div>
 
