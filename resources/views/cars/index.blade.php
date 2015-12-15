@@ -14,7 +14,9 @@
         @foreach($cars as $car)
             <div>
                 <h2>{{ $car->model }}</h2>
-                <a href='/cars/edit/{{$car->id}}'>Edit</a><br>
+                <a href='/cars/edit/{{$car->id}}'>Edit </a>
+                &nbsp;&nbsp;
+                <a href='/cars/delete/{{$car->id}}'>Delete</a><br>
                 <img src='{{ $car->picture }}'>
             </div>
         @endforeach
