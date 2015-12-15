@@ -10,11 +10,16 @@ class CarTagTableSeeder extends Seeder
     public function run()
     {
         $cars =[
-            'F-Pace' => ['Luxury','Premium','Sedan'],
-            'Prius' => ['Hybrid','Sedan','Economy'],
-            'Accord Hybrid' => ['Hybrid','Sedan', 'Full Size'],
-            'Mirai' => ['Fuel Cell','Compact','Sedan'],
-            'IS' => ['Economy','Sedan']
+            'GS450h' => ['Sedan','Luxury','Hybrid'],
+            'Grand Cherokee' => ['SUV','Premium'],
+            'Accord Hybrid' => ['Sedan','Full Size','Hybrid'],
+            'IS 350' => ['Sedan','Economy'],
+            'Prius v' => ['Sedan','Economy', 'Hybrid'],
+            'Mirai' => ['Sedan','Compact','Fuel Cell'],
+            'Fit' => ['Sedan','Compact'],
+            'B-Class' => ['Sedan','Compact','Hybrid'],
+            'Tucson EV' => ['SUV','Compact','Fuel Cell']
+            
         ];
 
         // For each car, insert into it its tags from above

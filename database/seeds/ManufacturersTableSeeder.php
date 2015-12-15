@@ -48,5 +48,21 @@ class ManufacturersTableSeeder extends Seeder
         'name' => 'Jaguar',
         'mfr_url' => 'http://www.jaguarusa.com/index.html',
         ]);
+
+        // Mercedes Benz
+        DB::table('manufacturers')->insert([
+        'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'name' => 'Mercedes Benz',
+        'mfr_url' => 'http://www.mbusa.com/mercedes/index',
+        ]);
+
+        // Hyundai
+        DB::table('manufacturers')->insert([
+        'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'name' => 'Hyundai',
+        'mfr_url' => 'https://www.hyundaiusa.com',
+        ]);
     }
 }

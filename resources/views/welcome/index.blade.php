@@ -7,6 +7,6 @@
 @section('content')
     <p>
         Welcome to Cars of Interest.
-        To get started <a href='/'>log in</a> or <a href='/register'>register</a>.
+        To get started <a href='/login'>log in</a> or <a href='/register'>register</a>.
     </p>
 @stop

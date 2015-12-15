@@ -9,19 +9,19 @@ class CarsTableSeeder extends Seeder
      */
     public function run()
     {
-        // Jaguar - F-Pace
-        $manufacturer_id = \App\Manufacturer::where('name','=','Jaguar')->pluck('id');
+        // Lexus - GS450h
+        $manufacturer_id = \App\Manufacturer::where('name','=','Lexus')->pluck('id');
         DB::table('cars')->insert([
         'created_at' => Carbon\Carbon::now()->toDateTimeString(),
         'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-        'model' => 'F-Pace',
+        'model' => 'GS450h',
         'style' => 'Premium',
         'manufacturer_id' => $manufacturer_id,
         'user_id' => 1,
         'year' => 2016,
-        'price' => 38999,
-        'picture' => 'https://media.ed.edmunds-media.com/jaguar/f-pace/2017/oem/2017_jaguar_f-pace_4dr-suv_base_fq_oem_10_300.jpg',
-        'purchase_link' => 'http://www.jaguarusa.com/all-models/f-pace/specifications/index.html',
+        'price' => 68125,
+        'picture' => 'https://media.ed.edmunds-media.com/lexus/gs-450h/2016/oem/2016_lexus_gs-450h_sedan_base_fq_oem_2_500.jpg',
+        'purchase_link' => 'http://www.lexus.com/build-your-lexus/#!/series/GS/',
         ]);
 
         // Jeep - Grand Cherokee
@@ -47,7 +47,7 @@ class CarsTableSeeder extends Seeder
         'model' => 'Accord Hybrid',
         'style' => 'Touring',
         'manufacturer_id' => $manufacturer_id,
-        'user_id' => 2,
+        'user_id' => 1,
         'year' => 2016,
         'price' => 29600,
         'picture' => 'https://media.ed.edmunds-media.com/honda/accord-hybrid/2015/oem/2015_honda_accord-hybrid_sedan_touring_rq_oem_1_500.jpg',
@@ -59,10 +59,10 @@ class CarsTableSeeder extends Seeder
         DB::table('cars')->insert([
         'created_at' => Carbon\Carbon::now()->toDateTimeString(),
         'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-        'model' => 'IS',
+        'model' => 'IS 350',
         'style' => 'F Sport',
         'manufacturer_id' => $manufacturer_id,
-        'user_id' => 1,
+        'user_id' => 2,
         'year' => 2016,
         'price' => 27499,
         'picture' => 'https://media.ed.edmunds-media.com/lexus/is-350/2016/oem/2016_lexus_is-350_sedan_base_rq_oem_1_500.jpg',
@@ -74,10 +74,10 @@ class CarsTableSeeder extends Seeder
         DB::table('cars')->insert([
         'created_at' => Carbon\Carbon::now()->toDateTimeString(),
         'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-        'model' => 'Prius',
-        'style' => 'v',
+        'model' => 'Prius v',
+        'style' => 'Base',
         'manufacturer_id' => $manufacturer_id,
-        'user_id' => 1,
+        'user_id' => 2,
         'year' => 2016,
         'price' => 22900,
         'picture' => 'https://media.ed.edmunds-media.com/toyota/prius-v/2016/oem/2016_toyota_prius-v_wagon_five_rq_oem_1_500.jpg',
@@ -107,11 +107,41 @@ class CarsTableSeeder extends Seeder
         'model' => 'Fit',
         'style' => 'Base',
         'manufacturer_id' => $manufacturer_id,
-        'user_id' => 1,
+        'user_id' => 4,
         'year' => 2016,
         'price' => 15600,
-        'picture' => 'https://media.ed.edmunds-media.com/honda/fit-ev/2013/oem/2013_honda_fit-ev_4dr-hatchback_base_fq_oem_4_500.jpg',
+        'picture' => 'https://media.ed.edmunds-media.com/honda/fit/2016/oem/2016_honda_fit_4dr-hatchback_ex-l-wnavigation_s_oem_1_500.jpg',
         'purchase_link' => 'http://automobiles.honda.com/fit/price.aspx',
+        ]);
+
+        // Hyundai - Tucson EV
+        $manufacturer_id = \App\Manufacturer::where('name','=','Hyundai')->pluck('id');
+        DB::table('cars')->insert([
+        'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'model' => 'Tucson EV',
+        'style' => 'Base',
+        'manufacturer_id' => $manufacturer_id,
+        'user_id' => 3,
+        'year' => 2016,
+        'price' => 40999,
+        'picture' => 'https://media.ed.edmunds-media.com/hyundai/tucson/2016/oem/2016_hyundai_tucson_4dr-suv_limited_s_oem_1_500.jpg',
+        'purchase_link' => 'https://www.hyundaiusa.com/tucsonfuelcell/index.aspx',
+        ]);
+
+        // Mercedes Benz - B-Class
+        $manufacturer_id = \App\Manufacturer::where('name','=','Mercedes Benz')->pluck('id');
+        DB::table('cars')->insert([
+        'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'model' => 'B-Class',
+        'style' => 'Base',
+        'manufacturer_id' => $manufacturer_id,
+        'user_id' => 3,
+        'year' => 2016,
+        'price' => 41450,
+        'picture' => 'https://media.ed.edmunds-media.com/mercedes-benz/b-class-electric-drive/2016/oem/2016_mercedes-benz_b-class-electric-drive_4dr-hatchback_b250e_s_oem_2_500.jpg',
+        'purchase_link' => 'https://www.mbusa.com/mercedes/vehicles/build/class-B/model-B250E#tab=tab-exterior',
         ]);
     }
 }
