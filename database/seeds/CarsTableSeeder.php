@@ -9,7 +9,7 @@ class CarsTableSeeder extends Seeder
      */
     public function run()
     {
-        // Lexus - GS450h
+        # Lexus - GS450h
         $manufacturer_id = \App\Manufacturer::where('name','=','Lexus')->pluck('id');
         DB::table('cars')->insert([
         'created_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -17,6 +17,7 @@ class CarsTableSeeder extends Seeder
         'model' => 'GS450h',
         'style' => 'Premium',
         'manufacturer_id' => $manufacturer_id,
+        'size_id' => 5,
         'user_id' => 1,
         'year' => 2016,
         'price' => 68125,
@@ -24,7 +25,7 @@ class CarsTableSeeder extends Seeder
         'purchase_link' => 'http://www.lexus.com/build-your-lexus/#!/series/GS/',
         ]);
 
-        // Jeep - Grand Cherokee
+        # Jeep - Grand Cherokee
         $manufacturer_id = \App\Manufacturer::where('name','=','Jeep')->pluck('id');
         DB::table('cars')->insert([
         'created_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -32,6 +33,7 @@ class CarsTableSeeder extends Seeder
         'model' => 'Grand Cherokee',
         'style' => 'Altitude',
         'manufacturer_id' => $manufacturer_id,
+        'size_id' => 5,
         'user_id' => 2,
         'year' => 2016,
         'price' => 34499,
@@ -39,7 +41,7 @@ class CarsTableSeeder extends Seeder
         'purchase_link' => 'http://www.jeep.com/model-compare/detailed-chart/?modelYearCode=CUJ201503&variation=1',
         ]);
 
-        // Honda - Accord Hybrid
+        # Honda - Accord Hybrid
         $manufacturer_id = \App\Manufacturer::where('name','=','Honda')->pluck('id');
         DB::table('cars')->insert([
         'created_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -47,6 +49,7 @@ class CarsTableSeeder extends Seeder
         'model' => 'Accord Hybrid',
         'style' => 'Touring',
         'manufacturer_id' => $manufacturer_id,
+        'size_id' => 5,
         'user_id' => 1,
         'year' => 2016,
         'price' => 29600,
@@ -54,7 +57,7 @@ class CarsTableSeeder extends Seeder
         'purchase_link' => 'http://automobiles.honda.com/accord-hybrid/price.aspx',
         ]);
 
-        // Lexus - IS
+        # Lexus - IS
         $manufacturer_id = \App\Manufacturer::where('name','=','Lexus')->pluck('id');
         DB::table('cars')->insert([
         'created_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -62,6 +65,7 @@ class CarsTableSeeder extends Seeder
         'model' => 'IS 350',
         'style' => 'F Sport',
         'manufacturer_id' => $manufacturer_id,
+        'size_id' => 1,
         'user_id' => 2,
         'year' => 2016,
         'price' => 27499,
@@ -69,7 +73,7 @@ class CarsTableSeeder extends Seeder
         'purchase_link' => 'http://www.lexus.com/build-your-lexus/#!/zip/02108/series/IS/trim',
         ]);
 
-        // Toyota - Prius v
+        # Toyota - Prius v
         $manufacturer_id = \App\Manufacturer::where('name','=','Toyota')->pluck('id');
         DB::table('cars')->insert([
         'created_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -77,6 +81,7 @@ class CarsTableSeeder extends Seeder
         'model' => 'Prius v',
         'style' => 'Base',
         'manufacturer_id' => $manufacturer_id,
+        'size_id' => 2,
         'user_id' => 2,
         'year' => 2016,
         'price' => 22900,
@@ -84,7 +89,7 @@ class CarsTableSeeder extends Seeder
         'purchase_link' => 'http://www.toyota.com/priusv/',
         ]);
 
-        // Toyota - Mirai
+        # Toyota - Mirai
         $manufacturer_id = \App\Manufacturer::where('name','=','Toyota')->pluck('id');
         DB::table('cars')->insert([
         'created_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -92,6 +97,7 @@ class CarsTableSeeder extends Seeder
         'model' => 'Mirai',
         'style' => 'Base',
         'manufacturer_id' => $manufacturer_id,
+        'size_id' => 1,
         'user_id' => 1,
         'year' => 2016,
         'price' => 18900,
@@ -99,7 +105,7 @@ class CarsTableSeeder extends Seeder
         'purchase_link' => 'https://ssl.toyota.com/mirai/fcv.html',
         ]);
 
-        // Honda - Fit
+        # Honda - Fit
         $manufacturer_id = \App\Manufacturer::where('name','=','Honda')->pluck('id');
         DB::table('cars')->insert([
         'created_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -107,6 +113,7 @@ class CarsTableSeeder extends Seeder
         'model' => 'Fit',
         'style' => 'Base',
         'manufacturer_id' => $manufacturer_id,
+        'size_id' => 1,
         'user_id' => 4,
         'year' => 2016,
         'price' => 15600,
@@ -114,7 +121,7 @@ class CarsTableSeeder extends Seeder
         'purchase_link' => 'http://automobiles.honda.com/fit/price.aspx',
         ]);
 
-        // Hyundai - Tucson EV
+        # Hyundai - Tucson EV
         $manufacturer_id = \App\Manufacturer::where('name','=','Hyundai')->pluck('id');
         DB::table('cars')->insert([
         'created_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -122,6 +129,7 @@ class CarsTableSeeder extends Seeder
         'model' => 'Tucson EV',
         'style' => 'Base',
         'manufacturer_id' => $manufacturer_id,
+        'size_id' => 5,
         'user_id' => 3,
         'year' => 2016,
         'price' => 40999,
@@ -129,7 +137,7 @@ class CarsTableSeeder extends Seeder
         'purchase_link' => 'https://www.hyundaiusa.com/tucsonfuelcell/index.aspx',
         ]);
 
-        // Mercedes Benz - B-Class
+        # Mercedes Benz - B-Class
         $manufacturer_id = \App\Manufacturer::where('name','=','Mercedes Benz')->pluck('id');
         DB::table('cars')->insert([
         'created_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -137,6 +145,7 @@ class CarsTableSeeder extends Seeder
         'model' => 'B-Class',
         'style' => 'Base',
         'manufacturer_id' => $manufacturer_id,
+        'size_id' => 1,
         'user_id' => 3,
         'year' => 2016,
         'price' => 41450,

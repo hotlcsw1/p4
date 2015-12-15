@@ -9,7 +9,7 @@ class ManufacturersTableSeeder extends Seeder
      */
     public function run()
     {
-        // Lexus
+        # Lexus
         DB::table('manufacturers')->insert([
         'created_at' => Carbon\Carbon::now()->toDateTimeString(),
         'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -17,7 +17,7 @@ class ManufacturersTableSeeder extends Seeder
         'mfr_url' => 'http://www.lexus.com/',
         ]);
 
-        // Toyota
+        # Toyota
         DB::table('manufacturers')->insert([
         'created_at' => Carbon\Carbon::now()->toDateTimeString(),
         'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -25,7 +25,7 @@ class ManufacturersTableSeeder extends Seeder
         'mfr_url' => 'http://www.toyota.com/',
         ]);
 
-        // Honda
+        # Honda
         DB::table('manufacturers')->insert([
         'created_at' => Carbon\Carbon::now()->toDateTimeString(),
         'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -33,7 +33,7 @@ class ManufacturersTableSeeder extends Seeder
         'mfr_url' => 'http://automobiles.honda.com/',
         ]);
 
-        // Jeep
+        # Jeep
         DB::table('manufacturers')->insert([
         'created_at' => Carbon\Carbon::now()->toDateTimeString(),
         'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -41,7 +41,7 @@ class ManufacturersTableSeeder extends Seeder
         'mfr_url' => 'http://www.jeep.com/en/',
         ]);
 
-        // Honda
+        # Honda
         DB::table('manufacturers')->insert([
         'created_at' => Carbon\Carbon::now()->toDateTimeString(),
         'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -49,7 +49,7 @@ class ManufacturersTableSeeder extends Seeder
         'mfr_url' => 'http://www.jaguarusa.com/index.html',
         ]);
 
-        // Mercedes Benz
+        # Mercedes Benz
         DB::table('manufacturers')->insert([
         'created_at' => Carbon\Carbon::now()->toDateTimeString(),
         'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -57,7 +57,7 @@ class ManufacturersTableSeeder extends Seeder
         'mfr_url' => 'http://www.mbusa.com/mercedes/index',
         ]);
 
-        // Hyundai
+        # Hyundai
         DB::table('manufacturers')->insert([
         'created_at' => Carbon\Carbon::now()->toDateTimeString(),
         'updated_at' => Carbon\Carbon::now()->toDateTimeString(),

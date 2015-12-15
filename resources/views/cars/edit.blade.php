@@ -60,6 +60,18 @@
         </div>
 
         <div class='form-group'>
+            <label for='size'>* Size:</label>
+            <select name='size' id='size'>
+                @foreach($sizes_for_dropdown as $size_id => $size_name)
+
+                    {{ $selected = ($size_id == $car->size->id) ? 'selected' : '' }}
+
+                    <option value='{{ $size_id }}' {{ $selected }}> {{ $size_name }} </option>
+                @endforeach
+            </select>
+        </div>
+
+        <div class='form-group'>
             <label for='title'>* Picture (URL):</label>
             <input
                 type='text'

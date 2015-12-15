@@ -1,7 +1,7 @@
 <?php
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-class CreateManufacturersTable extends Migration
+class CreateSizesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -10,11 +10,10 @@ class CreateManufacturersTable extends Migration
      */
     public function up()
     {
-        Schema::create('manufacturers', function (Blueprint $table) {
-            # Five fields: id, name, mfr_url, created_at and updated_at
+        Schema::create('sizes', function (Blueprint $table) {
+            # Four fields: id, name, created_at and updated_at
             $table->increments('id');
             $table->string('name');
-            $table->string('mfr_url');
             $table->timestamps();
 
         });
@@ -26,6 +25,6 @@ class CreateManufacturersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('manufacturers');
+        Schema::drop('sizes');
     }
 }

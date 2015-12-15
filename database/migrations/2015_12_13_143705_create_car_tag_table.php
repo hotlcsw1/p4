@@ -11,14 +11,14 @@ class CreateCarTagTable extends Migration
     public function up()
     {
         Schema::create('car_tag', function (Blueprint $table) {
-            // Five fields: id, created_at, updated_at
-            // FKs: car_id and tag_id
+            # Five fields: id, created_at, updated_at
+            # FKs: car_id and tag_id
             $table->increments('id');
             $table->timestamps();
             $table->integer('car_id')->unsigned();
             $table->integer('tag_id')->unsigned();
 
-            // Establish foreign keys
+            # Establish foreign keys
             $table->foreign('car_id')->references('id')->on('cars');
             $table->foreign('tag_id')->references('id')->on('tags');
         });

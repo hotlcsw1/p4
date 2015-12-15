@@ -10,12 +10,12 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // "user" variable made available to all the views
+        # "user" variable made available to all the views
         view()->composer('*', function($view) {
             $view->with('user', \Auth::user());
         });
     }
-    
+
     /**
      * Register the application services.
      *
@@ -23,6 +23,6 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        #
     }
 }

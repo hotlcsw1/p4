@@ -35,6 +35,7 @@ Create a Car
             value='{{ old('year','2016') }}'
             >
         </div>
+
         <div class='form-group'>
             <label for='manufacturer'>* Manufacturer:</label>
             <select name='manufacturer' id='manufacturer'>
@@ -62,6 +63,15 @@ Create a Car
             name='style'
             value='{{ old('style','LX') }}'
             >
+        </div>
+
+        <div class='form-group'>
+            <label for='size'>* Size:</label>
+            <select name='size' id='size'>
+                @foreach($sizes_for_dropdown as $size_id => $size_name)
+                    <option value='{{ $size_id }}'> {{ $size_name }} </option>
+                @endforeach
+            </select>
         </div>
 
         <div class='form-group'>

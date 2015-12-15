@@ -11,7 +11,7 @@
 */
 # Reminder: 5 Route methods are: get, post, put, delete, or all
 /*----------------------------------------------------
-/auth
+/ Authorization Routes:
 ------------------------------------------------------*/
 # Show login form
 Route::get('/login', 'Auth\AuthController@getLogin');
@@ -38,7 +38,6 @@ Route::get('/confirm-login-worked', function() {
 
     if($user) {
         echo 'You are logged in.';
-        //dump($user->toArray());
     } else {
         echo 'You are not logged in.';
     }
@@ -53,7 +52,7 @@ Route::get('/confirm-login-worked', function() {
 Route::get('/', 'WelcomeController@getIndex');
 
 /*----------------------------------------------------
-/ Car routes: create, post, get and delete
+/ Car routes: create, edit, get and delete
 -----------------------------------------------------*/
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/cars/create', 'CarController@getCreate');
@@ -67,6 +66,7 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::get('/cars', 'CarController@getIndex');
     Route::get('/cars/show/{model?}', 'CarController@getShow');
+
 });
 
 /*----------------------------------------------------
@@ -78,6 +78,7 @@ if(App::environment('local')) {
         DB::statement('DROP database carsdb');
         DB::statement('CREATE database carsdb');
         return 'Dropped carsdb; Re-created carsdb.';
+
     });
 };
 
@@ -85,34 +86,3 @@ if(App::environment('local')) {
 / Log viewer
 -----------------------------------------------------*/
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
-
-/*----------------------------------------------------
-/debug route--->REMOVE
------------------------------------------------------*/
-Route::get('/debug', function() {
-    echo '<pre>';
-    echo '<h1>Environment</h1>';
-    echo App::environment().'</h1>';
-    echo '<h1>Debugging?</h1>';
-    if(config('app.debug')) echo "Yes"; else echo "No";
-    echo '<h1>Database Config</h1>';
-    /*
-    The following line will output your MySQL credentials.
-    Uncomment it only if you're having a hard time connecting to the database and you
-    need to confirm your credentials.
-    When you're done debugging, comment it back out so you don't accidentally leave it
-    running on your live server, making your credentials public.
-    */
-    //print_r(config('database.connections.mysql'));
-    echo '<h1>Test Database Connection</h1>';
-    try {
-        $results = DB::select('SHOW DATABASES;');
-        echo '<strong style="background-color:green; padding:5px;">Connection confirmed</strong>';
-        echo "<br><br>Your Databases:<br><br>";
-        print_r($results);
-    }
-    catch (Exception $e) {
-        echo '<strong style="background-color:crimson; padding:5px;">Caught exception: ', $e->getMessage(), "</strong>\n";
-    }
-    echo '</pre>';
-});

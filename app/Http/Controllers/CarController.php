@@ -6,15 +6,17 @@ class CarController extends Controller {
     public function __construct() {
         # Put anything here that should happen before any of the other actions
     }
+
     /**
     * Responds to requests to GET /cars
     */
     public function getIndex(Request $request) {
-        // Get all the cars "owned" by the current logged in users
-        // Sort in descending order by id
+        # Get all the cars "owned" by the current logged in user
+        # Sort in descending order by id
         $cars = \App\Car::where('user_id','=',\Auth::id())->orderBy('id','DESC')->get();
         return view('cars.index')->with('cars',$cars);
     }
+
     /**
     * Responds to requests to GET /cars/edit/{$id}
     */
@@ -25,12 +27,18 @@ class CarController extends Controller {
             \Session::flash('flash_message','Car not found.');
             return redirect('\cars');
         }
-        # Get all the possible manufacturers so we can build the manufacturers dropdown in the view
+
+        # Manufacturer dropdown
         $manufacturerModel = new \App\Manufacturer();
         $manufacturers_for_dropdown = $manufacturerModel->getManufacturersForDropdown();
-        # Get all the possible tags so we can include them with checkboxes in the view
+
+        # Tag checkboxes
         $tagModel = new \App\Tag();
         $tags_for_checkbox = $tagModel->getTagsForCheckboxes();
+
+        # Size dropdown
+        $sizeModel = new \App\Size();
+        $sizes_for_dropdown = $sizeModel->getSizesForDropdown();
 
         /*
         Create a simple array of just the tag names for tags associated with this car;
@@ -41,12 +49,15 @@ class CarController extends Controller {
             $tags_for_this_car[] = $tag->name;
         }
 
+        # Pass variables to the view
         return view('cars.edit')
             ->with([
                 'car' => $car,
                 'manufacturers_for_dropdown' => $manufacturers_for_dropdown,
                 'tags_for_checkbox' => $tags_for_checkbox,
                 'tags_for_this_car' => $tags_for_this_car,
+                'sizes_for_dropdown' => $sizes_for_dropdown,
+
             ]);
     }
     /**
@@ -63,13 +74,14 @@ class CarController extends Controller {
                 'purchase_link' => 'url',
                 'price' => 'numeric|between:1,500000',
 
-              ]
+            ]
         );
         $car = \App\Car::find($request->id);
         $car->model = $request->model;
         $car->style = $request->style;
         $car->price = $request->price;
         $car->manufacturer_id = $request->manufacturer;
+        $car->size_id = $request->size;
         $car->picture = $request->picture;
         $car->year = $request->year;
         $car->purchase_link = $request->purchase_link;
@@ -83,20 +95,31 @@ class CarController extends Controller {
         $car->tags()->sync($tags);
         \Session::flash('flash_message','Your car was updated.');
         return redirect('/cars/edit/'.$request->id);
+
     }
+
     /**
      * Responds to requests to GET /cars/create
      */
     public function getCreate() {
+        # Manufacturer dropdown
         $manufacturerModel = new \App\Manufacturer();
         $manufacturers_for_dropdown = $manufacturerModel->getManufacturersForDropdown();
-        # Get all the possible tags so we can include them with checkboxes in the view
+
+        # Tag checkboxes
         $tagModel = new \App\Tag();
         $tags_for_checkbox = $tagModel->getTagsForCheckboxes();
+
+        # Sizes dropdown
+        $sizeModel = new \App\Size();
+        $sizes_for_dropdown = $sizeModel->getSizesForDropdown();
         return view('cars.create')
             ->with('manufacturers_for_dropdown',$manufacturers_for_dropdown)
-            ->with('tags_for_checkbox',$tags_for_checkbox);
+            ->with('tags_for_checkbox',$tags_for_checkbox)
+            ->with('sizes_for_dropdown',$sizes_for_dropdown);
+
     }
+
     /**
      * Responds to requests to POST /cars/create
      */
@@ -111,7 +134,7 @@ class CarController extends Controller {
                 'purchase_link' => 'url',
                 'price' => 'numeric|between:1,500000',
 
-              ]
+            ]
         );
         # Insert car record into database
         $car = new \App\Car();
@@ -119,6 +142,7 @@ class CarController extends Controller {
         $car->style = $request->style;
         $car->price = $request->price;
         $car->manufacturer_id = $request->manufacturer;
+        $car->size_id = $request->size;
         $car->user_id = \Auth::id();
         $car->picture = $request->picture;
         $car->year = $request->year;
@@ -132,16 +156,20 @@ class CarController extends Controller {
             $tags = [];
         }
         $car->tags()->sync($tags);
-        # Done
+
+        # Inform the user
         \Session::flash('flash_message','Your car of interest was added!');
         return redirect('/cars');
+
     }
+
     /**
      * Responds to requests to GET /cars/show/{model}
      */
     public function getShow($model = null) {
         return view('cars.show')->with('model', $model);
     }
+
     /**
 	* Confirm the deletion
 	*/
@@ -149,26 +177,27 @@ class CarController extends Controller {
         $car = \App\Car::find($car_id);
         return view('cars.delete')->with('car', $car);
     }
+
     /**
 	* To do the deletion
 	*/
     public function getDoDelete($car_id) {
-        // Find the car record in the db
+        # Find the car record in the db
         $car = \App\Car::find($car_id);
         if(is_null($car)) {
             \Session::flash('flash_message','Car not found.');
             return redirect('\cars');
         }
 
-        // Delete all tags attached to the car
+        # Delete all tags attached to the car
         if($car->tags()) {
             $car->tags()->detach();
         }
 
-        // Delete the car record from db
+        # Delete the car record from db
         $car->delete();
 
-        // Let the user know the car was deleted
+        # Inform the user
         \Session::flash('flash_message',$car->model.' was deleted.');
         return redirect('/cars');
     }

@@ -12,17 +12,17 @@ class CarTagTableSeeder extends Seeder
         $cars =[
             'GS450h' => ['Sedan','Luxury','Hybrid'],
             'Grand Cherokee' => ['SUV','Premium'],
-            'Accord Hybrid' => ['Sedan','Full Size','Hybrid'],
-            'IS 350' => ['Sedan','Economy'],
-            'Prius v' => ['Sedan','Economy', 'Hybrid'],
-            'Mirai' => ['Sedan','Compact','Fuel Cell'],
-            'Fit' => ['Sedan','Compact'],
-            'B-Class' => ['Sedan','Compact','Hybrid'],
-            'Tucson EV' => ['SUV','Compact','Fuel Cell']
-            
+            'Accord Hybrid' => ['Sedan','Hybrid'],
+            'IS 350' => ['Sedan'],
+            'Prius v' => ['Sedan','Hybrid'],
+            'Mirai' => ['Sedan','Fuel Cell'],
+            'Fit' => ['Sedan',],
+            'B-Class' => ['Sedan','Hybrid'],
+            'Tucson EV' => ['SUV','Fuel Cell']
+
         ];
 
-        // For each car, insert into it its tags from above
+        # For each car, insert into it its tags from above
         foreach($cars as $model => $tags) {
             $car = \App\Car::where('model','like',$model)->first();
             foreach($tags as $tagName) {

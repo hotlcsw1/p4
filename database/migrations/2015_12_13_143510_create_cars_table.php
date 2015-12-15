@@ -11,9 +11,9 @@ class CreateCarsTable extends Migration
     public function up()
     {
         Schema::create('cars', function (Blueprint $table) {
-            // Ten Fields: id, model, style, year, picture,
-            // purchase_link, created_at and updated_at
-            // FKs (manufacturer_id and user_id) are created with the connect scripts
+            # Twelve Fields: id, model, style, year, picture, price,
+            # purchase_link, created_at and updated_at
+            # FKs (manufacturer_id, user_id and size_id) are created with the connect scripts
             $table->increments('id');
             $table->string('model');
             $table->string('style');
