@@ -9,7 +9,7 @@
     <h1>My Cars</h1>
 
     @if(sizeof($cars) == 0)
-        You don't have any cars of interest yet, <a href='/cars/create'>Why not add one?</a>
+        You don't have any cars of interest yet, <a href='/cars/create'>have fun adding one?</a>
     @else
         @foreach($cars as $car)
             <div>
@@ -17,7 +17,9 @@
                 <a href='/cars/edit/{{$car->id}}'>Edit </a>
                 &nbsp;&nbsp;
                 <a href='/cars/delete/{{$car->id}}'>Delete</a><br>
-                <img src='{{ $car->picture }}'>
+                <a href='{{ $car->purchase_link }}' target="_blank" class="banner-part">
+                    <img src='{{ $car->picture }}'>
+                </a>
             </div>
         @endforeach
     @endif
