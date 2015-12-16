@@ -70,11 +70,12 @@ Route::group(['middleware' => 'auth'], function() {
 });
 
 /*----------------------------------------------------
-Debugging/Local/Misc--->REMOVE
+Debugging/Local/Misc
 -----------------------------------------------------*/
 if(App::environment('local')) {
     Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
     Route::get('/drop', function() {
+        # Drop and recreate db
         DB::statement('DROP database carsdb');
         DB::statement('CREATE database carsdb');
         return 'Dropped carsdb; Re-created carsdb.';
