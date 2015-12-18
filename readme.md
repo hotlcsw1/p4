@@ -2,13 +2,13 @@
 
 Author       : Arcot Prakash
 Date Created : 12/02/2015
-Date Updated : 12/15/2015
+Date Updated : 12/17/2015
 
 Live URL: p4.approjects.me
 
 GitHub URL: https://github.com/hotlcsw1/p4
 
-Jing Demo: TBD
+Jing Demo: http://screencast.com/t/TOaMvOPIejq
 
 Description:
     This is project #4 and is intended for us to learn how to interact with MySQL database dynamically.  I will showcase inserting, updating and deleting records using PhP, Laravel and Eloquent frameworks.
